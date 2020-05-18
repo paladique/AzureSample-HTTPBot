@@ -2,11 +2,11 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "metadata": {
-        "comments": "This template was developed for demonstration purposes.",
+        "comments": "This template was developed for demo and sample purposes.",
          "description": "HTTP Triggered Logic App"
     },
     "parameters": {
-        "BotLogicAppName": {
+        "LogicAppName": {
             "defaultValue": "BotLogicApp",
             "type": "string",
             "metadata": {
@@ -19,7 +19,7 @@
         {
             "type": "Microsoft.Logic/workflows",
             "apiVersion": "2017-07-01",
-            "name": "[parameters('BotLogicAppName')]",
+            "name": "[parameters('LogicAppName')]",
             "location": "centralus",
             "properties": {
                 "state": "Enabled",

@@ -32,7 +32,7 @@ The bot greets the user and prompts for their name and a message. These response
 
 ### Create Logic App
 
-- Click this button to create an HTTP Triggered Logic App with your Azure account: [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fgithub.com%2Fpaladique%2FAzureSample-HTTPBot%2Fblob%2Fmaster%2Ftemplate.json)
+- Click this button to create an HTTP Triggered Logic App with your Azure account: [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpaladique%2FAzureSample-HTTPBot%2Fmaster%2Ftemplate.json)
   - **OR** Create a [HTTP triggered Logic App in the Azure Portal](https://docs.microsoft.com/en-us/azure/connectors/connectors-native-reqres#prerequisites?WT.mc_id=ca-github-jasmineg)
 - After deployment is complete, open Logic App and click "Edit"
 - Copy the URL labeled **HTTP POST URL**
