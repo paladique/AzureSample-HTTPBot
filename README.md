@@ -6,9 +6,9 @@ Bot using the [Microsoft Bot Framework](https://dev.botframework.com?WT.mc_id=ca
 
 The bot greets the user and prompts for their name and a message. These responses are sent via POST request to a HTTP triggered Logic App that can be built upon to respond to the request.
 
-### 💡 Ideas
+### 💡 Ideas for your Logic App
 
-- Send an HTTPS Response for a personalized message to user
+- Send a Response with a personalized message to user
 - Use a Twilio connector to format and send responses as a text message
 - Send an email
 - Update a table or collection in a database
