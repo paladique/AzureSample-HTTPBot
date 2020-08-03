@@ -24,12 +24,8 @@ namespace HTTPBotSample
 
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            // var replyText = $"Echo: {turnContext.Activity.Text}";
-            // await turnContext.SendActivityAsync(MessageFactory.Text(replyText, replyText), cancellationToken);
-
             var conversationStateAccessors = _conversationState.CreateProperty<ConversationFlow>(nameof(ConversationFlow));
             var flow = await conversationStateAccessors.GetAsync(turnContext, () => new ConversationFlow(), cancellationToken);
-
             var userStateAccessors = _userState.CreateProperty<UserProfile>(nameof(UserProfile));
             var profile = await userStateAccessors.GetAsync(turnContext, () => new UserProfile(), cancellationToken);
             await FillOutUserProfileAsync(flow, profile, turnContext, cancellationToken);
@@ -71,28 +67,31 @@ namespace HTTPBotSample
 
                 case ConversationFlow.Question.Message:
                     profile.Message = input;
-                    await turnContext.SendActivityAsync($"Thank you for your message!", null, null, cancellationToken);
-                    flow.LastQuestionAsked = ConversationFlow.Question.None;
 
-                    sendResponses(profile);
+                    var messageRecieved = sendResponses(profile);
+                    if (messageRecieved)
+                    {
+                        await turnContext.SendActivityAsync($"Thank you for your message!", null, null, cancellationToken);
+                    }
+                    else
+                    {
+                        await turnContext.SendActivityAsync($"There was a problem sending your message. Try again!", null, null, cancellationToken);
+                    }
+                    flow.LastQuestionAsked = ConversationFlow.Question.None;
                     break;
             }
         }
 
-        static void sendResponses(UserProfile profile)
+        static bool sendResponses(UserProfile profile)
         {
             var json = JsonConvert.SerializeObject(profile);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
             var hc = new HttpClient();
-            var response = hc.PostAsync("https://prod-23.centralus.logic.azure.com:443/workflows/23e4600d35c24fe08254a35c880401a9/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xxhAQdFxKrAHDApfDwnFmFB0lmcLNMzEeUpM8OU4kq8", data);
-
-            if (response.Result.StatusCode == HttpStatusCode.OK)
-            {
-
-            }
-
-        }      
+            var response = hc.PostAsync("", data);
+            var success = response.Result.StatusCode == HttpStatusCode.OK ? true : false;
+            return success;
+        }
     }
 }
 
