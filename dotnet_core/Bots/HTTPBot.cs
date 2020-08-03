@@ -8,10 +8,10 @@ namespace HTTPBotSample
 {
     public class HTTPBot : ActivityHandler
     {
-        private BotState _userState;
+        private readonly BotState _userState;
         private readonly BotState _conversationState;
 
-        HTTPBot(ConversationState conversationState, UserState userState)
+       public HTTPBot(ConversationState conversationState, UserState userState)
         {
             _userState = userState;
             _conversationState = conversationState;
