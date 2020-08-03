@@ -1,8 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
+using System.Net.Http;
+using System.Net;
+using Newtonsoft.Json;
+
 
 namespace HTTPBotSample
 {
@@ -11,7 +16,7 @@ namespace HTTPBotSample
         private readonly BotState _userState;
         private readonly BotState _conversationState;
 
-       public HTTPBot(ConversationState conversationState, UserState userState)
+        public HTTPBot(ConversationState conversationState, UserState userState)
         {
             _userState = userState;
             _conversationState = conversationState;
@@ -58,18 +63,36 @@ namespace HTTPBotSample
                     break;
                 case ConversationFlow.Question.Name:
 
-                        profile.Name = input;
-                        await turnContext.SendActivityAsync($"Hi {profile.Name}.", null, null, cancellationToken);
-                        await turnContext.SendActivityAsync("What's your message?", null, null, cancellationToken);
-                        flow.LastQuestionAsked = ConversationFlow.Question.Message;
-                        break;
-                    
+                    profile.Name = input;
+                    await turnContext.SendActivityAsync($"Hi {profile.Name}.", null, null, cancellationToken);
+                    await turnContext.SendActivityAsync("What's your message?", null, null, cancellationToken);
+                    flow.LastQuestionAsked = ConversationFlow.Question.Message;
+                    break;
+
                 case ConversationFlow.Question.Message:
-                        profile.Message = input;
-                        await turnContext.SendActivityAsync($"Thank you for your message!!.", null, null, cancellationToken);
-                        flow.LastQuestionAsked = ConversationFlow.Question.None;
-                        break;
+                    profile.Message = input;
+                    await turnContext.SendActivityAsync($"Thank you for your message!", null, null, cancellationToken);
+                    flow.LastQuestionAsked = ConversationFlow.Question.None;
+
+                    sendResponses(profile);
+                    break;
             }
         }
+
+        static void sendResponses(UserProfile profile)
+        {
+            var json = JsonConvert.SerializeObject(profile);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var hc = new HttpClient();
+            var response = hc.PostAsync("https://prod-23.centralus.logic.azure.com:443/workflows/23e4600d35c24fe08254a35c880401a9/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xxhAQdFxKrAHDApfDwnFmFB0lmcLNMzEeUpM8OU4kq8", data);
+
+            if (response.Result.StatusCode == HttpStatusCode.OK)
+            {
+
+            }
+
+        }      
     }
 }
+
