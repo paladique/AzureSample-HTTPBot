@@ -19,11 +19,8 @@ The bot greets the user and prompts for their name and a message. These response
 - Clone/Download this repo to your local machine.
 - [Bot Framework Emulator](https://github.com/microsoft/botframework-emulator)
 - [Node.js](https://nodejs.org) version 10.14.1 or higher
-
-    ```bash
-    # determine node version
-    node --version
-    ``
+  OR
+- [.NET Core SDK](https://dotnet.microsoft.com/download?WT.mc_id=ca-github-jasmineg)
 
 - [Azure Account](https://azure.microsoft.com/en-us/free/?WT.mc_id=ca-github-jasmineg)
 - [Student? 🎓 Sign up for an Azure Student account!](https://azure.microsoft.com/en-us/free/students/?WT.mc_id=ca-github-jasmineg)
@@ -40,6 +37,8 @@ The bot greets the user and prompts for their name and a message. These response
 
 ### Edit Code
 
+#### Edit Code: Node
+
 - Paste Logic app URL from previous step as the value for `MessageEndpoint` in the provided `.env` file
 
     ```node
@@ -48,13 +47,35 @@ The bot greets the user and prompts for their name and a message. These response
 
 - Confirm that the beginning/base of the url matches the line 105 of `bot.js`, update this line if it does not.
 
+#### Edit Code: .NET Core
+
+- In your favorite command line tool, navigate to the project directory and enter the following
+
+    ```bash
+    dotnet user-secrets init
+    dotnet user-secrets set "MessageEndpoint" "https://copied-url"
+    ```
+
+- Confirm that the .csproj file contains a UserSecretsId entry: `<UserSecretsId>unique-guid</UserSecretsId>`
+- You can remove the secret
+
 ### Run the bot
+
+#### Run the bot: Node
 
 - Install modules and start bot
 
     ```bash
     npm install
     npm start
+    ```
+
+#### Run the bot: .NET Core
+
+- Start from command line (in project directory)
+  
+    ```bash
+    dotnet run
     ```
 
 ### Testing the bot locally using Bot Framework Emulator
