@@ -7,7 +7,7 @@ using Microsoft.Bot.Schema;
 using System.Net.Http;
 using System.Net;
 using Newtonsoft.Json;
-
+using Microsoft.Extensions.Options;
 
 namespace HTTPBotSample
 {
@@ -15,11 +15,14 @@ namespace HTTPBotSample
     {
         private readonly BotState _userState;
         private readonly BotState _conversationState;
+        private readonly IOptionsMonitor<Config> _optionsMonitor;
 
-        public HTTPBot(ConversationState conversationState, UserState userState)
+        public HTTPBot(ConversationState conversationState, UserState userState, IOptionsMonitor<Config> optionsMonitor)
         {
             _userState = userState;
             _conversationState = conversationState;
+            _optionsMonitor = optionsMonitor;
+
         }
 
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -47,7 +50,7 @@ namespace HTTPBotSample
             }
         }
 
-        private static async Task FillOutUserProfileAsync(ConversationFlow flow, UserProfile profile, ITurnContext turnContext, CancellationToken cancellationToken)
+        private async Task FillOutUserProfileAsync(ConversationFlow flow, UserProfile profile, ITurnContext turnContext, CancellationToken cancellationToken)
         {
             var input = turnContext.Activity.Text?.Trim();
 
@@ -82,14 +85,16 @@ namespace HTTPBotSample
             }
         }
 
-        static bool sendResponses(UserProfile profile)
+        public bool sendResponses(UserProfile profile)
         {
+            var endpoint = _optionsMonitor.CurrentValue.MessageEndpoint;
+
             var json = JsonConvert.SerializeObject(profile);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
             var hc = new HttpClient();
-            var response = hc.PostAsync("", data);
-            var success = response.Result.StatusCode == HttpStatusCode.OK ? true : false;
+            var response = hc.PostAsync(endpoint, data);
+            var success = response.Result.StatusCode == HttpStatusCode.Accepted ? true : false;
             return success;
         }
     }
