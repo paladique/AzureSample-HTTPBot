@@ -1,0 +1,386 @@
+{
+  "luis_schema_version": "7.0.0",
+  "intents": [
+    {
+      "name": "Greet",
+      "features": []
+    },
+    {
+      "name": "Learning",
+      "features": []
+    },
+    {
+      "name": "None",
+      "features": []
+    }
+  ],
+  "entities": [
+    {
+      "name": "documentation",
+      "children": [],
+      "roles": [],
+      "features": []
+    },
+    {
+      "name": "samples",
+      "children": [],
+      "roles": [],
+      "features": []
+    },
+    {
+      "name": "TechInterests",
+      "children": [],
+      "roles": [],
+      "features": []
+    }
+  ],
+  "hierarchicals": [],
+  "composites": [],
+  "closedLists": [],
+  "prebuiltEntities": [
+    {
+      "name": "personName",
+      "roles": []
+    }
+  ],
+  "utterances": [
+    {
+      "text": "asp.net",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 6,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "c",
+      "intent": "Learning",
+      "entities": []
+    },
+    {
+      "text": "c sharp",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 6,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "c#",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "docs",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "documentation",
+          "startPos": 0,
+          "endPos": 3,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "documentation",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "documentation",
+          "startPos": 0,
+          "endPos": 12,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "e",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "f#",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "go",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "hello",
+      "intent": "Greet",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greet",
+      "entities": []
+    },
+    {
+      "text": "i want code samples",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "samples",
+          "startPos": 7,
+          "endPos": 18,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want docs",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "documentation",
+          "startPos": 7,
+          "endPos": 10,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want documentation",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "documentation",
+          "startPos": 7,
+          "endPos": 19,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want documentation on powershell",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "documentation",
+          "startPos": 7,
+          "endPos": 19,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want samples in",
+      "intent": "Learning",
+      "entities": []
+    },
+    {
+      "text": "i want samples in c#",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 18,
+          "endPos": 19,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want samples on powershell",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "samples",
+          "startPos": 7,
+          "endPos": 13,
+          "children": []
+        },
+        {
+          "entity": "TechInterests",
+          "startPos": 18,
+          "endPos": 27,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want to learn",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "samples",
+          "startPos": 10,
+          "endPos": 14,
+          "children": []
+        },
+        {
+          "entity": "documentation",
+          "startPos": 10,
+          "endPos": 14,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want to learn about",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "samples",
+          "startPos": 10,
+          "endPos": 14,
+          "children": []
+        },
+        {
+          "entity": "documentation",
+          "startPos": 10,
+          "endPos": 14,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "java",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 3,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "javascript",
+      "intent": "Learning",
+      "entities": []
+    },
+    {
+      "text": "node",
+      "intent": "Learning",
+      "entities": []
+    },
+    {
+      "text": "node.js",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 6,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "python",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 5,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "samples",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "samples",
+          "startPos": 0,
+          "endPos": 6,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "scala",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 4,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "sql",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "test",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "visual studio",
+      "intent": "Learning",
+      "entities": [
+        {
+          "entity": "TechInterests",
+          "startPos": 0,
+          "endPos": 12,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "versionId": "0.1",
+  "name": "ContentModel",
+  "desc": "",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "phraselists": [],
+  "regex_features": [],
+  "patterns": [],
+  "settings": []
+}
