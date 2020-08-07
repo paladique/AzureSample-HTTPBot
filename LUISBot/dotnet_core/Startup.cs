@@ -29,8 +29,6 @@ namespace LUISBotSample
             services.AddSingleton<ConversationState>();
             services.AddSingleton<ContentRecognizer>();
 
-            //Get Message Endpoint Secret
-            services.Configure<Config>(Configuration);
             services.AddSingleton<ContentDialog>();
             services.AddTransient<IBot, LUISBot>();
         }

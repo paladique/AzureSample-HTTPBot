@@ -17,16 +17,13 @@ namespace LUISBotSample
     {
         private readonly BotState _userState;
         private readonly BotState _conversationState;
-        private readonly IOptionsMonitor<Config> _optionsMonitor;
-        private readonly ContentDialog Dialog;
+        private readonly ContentDialog _contentDialog;
 
-        public LUISBot(ConversationState conversationState, UserState userState, ContentDialog contentDialog, IOptionsMonitor<Config> optionsMonitor)
+        public LUISBot(ConversationState conversationState, UserState userState, ContentDialog contentDialog)
         {
             _userState = userState;
             _conversationState = conversationState;
-            _optionsMonitor = optionsMonitor;
-            Dialog = contentDialog;
-
+            _contentDialog = contentDialog;
         }
 
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -34,7 +31,7 @@ namespace LUISBotSample
             var conversationStateAccessors = _conversationState.CreateProperty<ConversationFlow>(nameof(ConversationFlow));
             var flow = await conversationStateAccessors.GetAsync(turnContext, () => new ConversationFlow(), cancellationToken);
 
-            await Dialog.RunAsync(turnContext, _conversationState.CreateProperty<DialogState>(nameof(DialogState)), cancellationToken);
+            await _contentDialog.RunAsync(turnContext, _conversationState.CreateProperty<DialogState>(nameof(DialogState)), cancellationToken);
 
         }
 
@@ -61,4 +58,3 @@ namespace LUISBotSample
 
     }
 }
-
