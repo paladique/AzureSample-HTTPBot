@@ -26,10 +26,10 @@ Bot that returns search queries on Microsoft Docs and Samples.
 - [Bot Framework Emulator](https://github.com/microsoft/botframework-emulator)
 - [Node.js](https://nodejs.org) version 10.14.1 or higher
   OR
-- [.NET Core SDK](https://dotnet.microsoft.com/download?WT.mc_id=ca-github-jasmineg)
+- [.NET Core SDK](https://dotnet.microsoft.com/download?WT.mc_id=academic-0000-jasmineg)
 
-- [Azure Account](https://azure.microsoft.com/en-us/free/?WT.mc_id=ca-github-jasmineg)
-- [Student? 🎓 Sign up for an Azure Student account!](https://azure.microsoft.com/en-us/free/students/?WT.mc_id=ca-github-jasmineg)
+- [Azure Account](https://azure.microsoft.com/free/?WT.mc_id=academic-0000-jasmineg)
+- [Student? 🎓 Sign up for an Azure Student account!](https://azure.microsoft.com/free/students/?WT.mc_id=academic-0000-jasmineg)
 
 ### Testing the bot locally using Bot Framework Emulator
 
@@ -48,14 +48,14 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 
 ### Concepts Used in This Demo
 
-- [Gathering Input Using Prompts](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-prompts?WT.mc_id=ca-github-jasmineg)
-- [Activity processing](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-activity-processing?WT.mc_id=ca-github-jasmineg)
-- [Receive and respond to inbound HTTPS requests in Azure Logic Apps](https://docs.microsoft.com/en-us/azure/connectors/connectors-native-reqres#prerequisites?WT.mc_id=ca-github-jasmineg)
+- [Gathering Input Using Prompts](https://docs.microsoft.com/azure/bot-service/bot-builder-prompts?WT.mc_id=academic-0000-jasmineg)
+- [Activity processing](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-activity-processing?WT.mc_id=academic-0000-jasmineg)
+- [Receive and respond to inbound HTTPS requests in Azure Logic Apps](https://docs.microsoft.com/azure/connectors/connectors-native-reqres?WT.mc_id=academic-0000-jasmineg#prerequisites?WT.mc_id=ca-github-jasmineg)
 
 ### General Resources
 
 - [Bot Framework Documentation](https://docs.botframework.com?WT.mc_id=ca-github-jasmineg)
-- [Bot Basics](https://docs.microsoft.com/azure/bot-service/bot-builder-basics?WT.mc_id=ca-github-jasmineg)
-- [Channels and Bot Connector Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-concepts?WT.mc_id=ca-github-jasmineg)
-- [Language Understanding using LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/?WT.mc_id=ca-github-jasmineg)
-- [Overview - What is Azure Logic Apps?](https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview?WT.mc_id=ca-github-jasmineg)
+- [Bot Basics](https://docs.microsoft.com/azure/bot-service/bot-builder-basics?WT.mc_id=academic-0000-jasmineg)
+- [Channels and Bot Connector Service](https://docs.microsoft.com/azure/bot-service/bot-concepts?WT.mc_id=academic-0000-jasmineg)
+- [Language Understanding using LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/?WT.mc_id=academic-0000-jasmineg)
+- [Overview - What is Azure Logic Apps?](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview?WT.mc_id=academic-0000-jasmineg)
