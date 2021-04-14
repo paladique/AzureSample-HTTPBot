@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: recognizers-text
+Version: 1.0.2a2
+Summary: recognizers-text README
+Home-page: https://github.com/Microsoft/Recognizers-Text
+Author: Microsoft
+Author-email: UNKNOWN
+License: MIT
+Keywords: nlp,nlp-entity-extraction,entity-extraction,parser-library
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: emoji
+Requires-Dist: multipledispatch
+
+recognizers-text long README.
+
+

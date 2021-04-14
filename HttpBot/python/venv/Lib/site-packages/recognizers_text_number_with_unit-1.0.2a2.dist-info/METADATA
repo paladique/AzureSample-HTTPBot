@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: recognizers-text-number-with-unit
+Version: 1.0.2a2
+Summary: recognizers-text-number-with-unit README
+Home-page: https://github.com/Microsoft/Recognizers-Text
+Author: Microsoft
+Author-email: UNKNOWN
+License: MIT
+Keywords: nlp,nlp-entity-extraction,entity-extraction,parser-library
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: recognizers-text (>=1.0.2.a2)
+Requires-Dist: recognizers-text-number (>=1.0.2.a2)
+Requires-Dist: regex
+
+=====================================================
+Microsoft.Recognizers.Text.NumberWithUnit for Python
+=====================================================
+
+This module (``recognizers-text-number-with-unit``) is a sub-module of
+``recognizers-text-suite``.
+
+Please check the `main README`_ for more details.
+
+.. _main README: https://github.com/Microsoft/Recognizers-Text/tree/master/Python
+
