@@ -20,7 +20,7 @@ Bot that returns search queries on Microsoft Docs and Samples.
 
 [.NET Core](LUISBot/dotnet_core)
 
-## Prerequisites
+## Prerequisites 
 
 - Clone/Download this repo to your local machine.
 - [Bot Framework Emulator](https://github.com/microsoft/botframework-emulator)
